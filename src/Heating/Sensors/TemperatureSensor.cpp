@@ -2,6 +2,7 @@
 #include "Thermistor.h"
 #include "ThermocoupleSensor31855.h"
 #include "ThermocoupleSensor31856.h"
+#include "InoTrident.h"
 #include "RtdSensor31865.h"
 #include "CurrentLoopTemperatureSensor.h"
 #include "LinearAnalogSensor.h"
@@ -219,6 +220,10 @@ TemperatureSensor *TemperatureSensor::Create(unsigned int sensorNum, const char 
 	else if (ReducedStringEquals(typeName, CurrentLoopTemperatureSensor::TypeName))
 	{
 		ts = new CurrentLoopTemperatureSensor(sensorNum);
+	}
+	else if (ReducedStringEquals(typeName, InoTrident::TypeName)) // INO TRIDENT
+	{
+		ts = new InoTrident(sensorNum);
 	}
 #endif
 #if SUPPORT_DHT_SENSOR

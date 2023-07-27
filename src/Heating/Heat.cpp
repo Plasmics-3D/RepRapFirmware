@@ -152,6 +152,12 @@ ReadLockedPointer<Heater> Heat::FindHeater(int heater) const noexcept
 	return ReadLockedPointer<Heater>(locker, (heater < 0 || heater >= (int)MaxHeaters) ? nullptr : heaters[heater]);
 }
 
+ReadLockedPointer<Heater> Heat::GetHeaterAddress(int heater) const noexcept // ADDED BY PLASMICS for INO heaters
+{
+	ReadLocker locker(heatersLock);
+	return ReadLockedPointer<Heater>(locker, (heater < 0 || heater >= (int)MaxHeaters) ? nullptr : heaters[heater]);
+}
+
 // Process M307
 GCodeResult Heat::SetOrReportHeaterModel(GCodeBuffer& gb, const StringRef& reply) THROWS(GCodeException)
 {

@@ -14,7 +14,7 @@
 # ifdef USE_CAN0
 #  define VERSION_SUFFIX	"(CAN0)"
 # else
-#  define VERSION_SUFFIX	""
+#  define VERSION_SUFFIX	"(INO)"
 # endif
 # define VERSION MAIN_VERSION VERSION_SUFFIX
 #endif
@@ -22,6 +22,6 @@
 extern const char *const DATE;
 extern const char *const TIME_SUFFIX;
 
-#define AUTHORS "reprappro, dc42, chrishamm, t3p3, dnewman, printm3d"
+#define AUTHORS "reprappro, dc42, chrishamm, t3p3, dnewman, printm3d, KOlasmics"
 
 #endif /* SRC_VERSION_H_ */

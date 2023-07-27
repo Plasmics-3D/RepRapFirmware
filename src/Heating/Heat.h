@@ -153,8 +153,8 @@ public:
 #endif
 
 	static TaskHandle GetHeatTask() noexcept;
-
 	static ReadWriteLock sensorsLock;							// needs to be public so that the OMT in EndstopsManager can lock it
+	ReadLockedPointer<Heater> GetHeaterAddress(int heater) const noexcept; // Plasmics - Needed for ino to get heater adress info
 
 protected:
 	DECLARE_OBJECT_MODEL

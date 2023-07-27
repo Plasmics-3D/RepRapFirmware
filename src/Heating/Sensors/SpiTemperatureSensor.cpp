@@ -56,7 +56,7 @@ TemperatureError SpiTemperatureSensor::DoSpiTransaction(const uint8_t dataOut[],
 	delayMicroseconds(1);
 	uint8_t rawBytes[8];
 	const bool ok = device.TransceivePacket(dataOut, rawBytes, nbytes);
-	delayMicroseconds(1);
+	delayMicroseconds(1500);
 
 	device.Deselect();
 	delayMicroseconds(1);

@@ -30,7 +30,11 @@ enum class TemperatureError : uint8_t
 	unknownSensor,
 	overOrUnderVoltage,
 	badVref,
-	badVssa
+	badVssa,
+	InoNoHeartBeat,
+	InoNoSteadyHeat,
+	InoHeatSlow,
+	InoHeatFast
 };
 
 const char* TemperatureErrorString(TemperatureError err) noexcept;

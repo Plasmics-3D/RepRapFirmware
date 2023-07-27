@@ -29,6 +29,10 @@ const char* TemperatureErrorString(TemperatureError err) noexcept
 	case TemperatureError::overOrUnderVoltage:	return "sensor short to other wiring";
 	case TemperatureError::badVref:			return "bad Vref";
 	case TemperatureError::badVssa:			return "bad Vssa";
+	case TemperatureError::InoNoHeartBeat:		return "Ino has no heart beat";
+	case TemperatureError::InoNoSteadyHeat:		return "Ino has no steady heat control";
+	case TemperatureError::InoHeatSlow:			return "Ino heats up slow";
+	case TemperatureError::InoHeatFast:			return "Ino heats up fast";
 	default:								return "unknown temperature sense error";
 	}
 }
